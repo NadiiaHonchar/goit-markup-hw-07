@@ -1,0 +1,51 @@
+.clients-list
+{
+    display: flex;
+}
+
+.clients-list__margin
+{
+    display: flex;
+    &:not(:last-child)
+    {
+        margin-right: 30px;
+    }
+}
+
+.clients-list__clients
+{
+  width: 170px;
+  height: 92px;
+  background-color: $primary-page-color;
+  border-radius: 4px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border: 1px solid #AFB1B8;
+  box-sizing: border-box;
+  transform: translate(0px, 0px);
+  transition-duration: $time;
+  transition-timing-function: $cubic;
+  &:hover>.bacground-clients,
+  &:focus>.bacground-clients
+  {
+      fill: $secondary-linc-color;
+    }
+  &:focus,
+  &:hover
+  {
+      border: 1px solid $secondary-linc-color;
+      transform: translate(0px, 20px);
+      transition-duration: $time;
+      transition-timing-function: $cubic;
+  }
+}
+
+.clients-list__bacground
+{
+  width: 106px;
+  height: 60px; 
+  fill: #AFB1B8;
+  margin: auto; 
+}
