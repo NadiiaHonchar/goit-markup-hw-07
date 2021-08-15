@@ -516,6 +516,9 @@ summary {
 }
 
 .backdrop-form__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 12px;
   line-height: 1.2;
   letter-spacing: 0.01em;
@@ -530,12 +533,23 @@ summary {
   border-radius: 4px;
   height: 41px;
   margin-bottom: 10px;
-  font-family: Roboto, sans-serif;
-  color: #757575;
+  font-family: roboto,sans-serif;
+  color: var(--primary-text-color);
   font-size: 12px;
   line-height: 1.2;
   letter-spacing: 0.01em;
   padding-left: 42px;
+}
+
+.backdrop-form__input:focus {
+  outline: none;
+  border-color: #2196F3;
+  -webkit-transition-property: border-color;
+  transition-property: border-color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop-form__area {
@@ -591,6 +605,9 @@ summary {
 }
 
 .backdrop-form__checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   top: 0;
   left: -5%;
@@ -607,16 +624,18 @@ summary {
   background-repeat: no-repeat;
 }
 
-.backdrop-form__label {
+.backdrop-form__field {
+  display: block;
   position: relative;
-  padding: 0;
-  margin: 0;
+  margin-bottom: 4px;
 }
 
 .backdrop-form__icon {
   position: absolute;
-  top: 25%;
-  left: 15px;
+  top: 50%;
+  left: 10px;
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
   display: inline-block;
 }
 
@@ -624,10 +643,22 @@ summary {
 .backdrop-form__area:focus {
   outline: none;
   border-color: #2196F3;
+  -webkit-transition-property: border-color;
+  transition-property: border-color;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop-form__input:focus + .backdrop-form__icon {
   fill: #2196F3;
+  -webkit-transition-property: fill;
+  transition-property: fill;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop-form__contract:focus,
@@ -636,12 +667,48 @@ summary {
   color: #2196F3;
 }
 
+.backdrop-form__area::-webkit-input-placeholder {
+  color: #757575;
+  background-color: #FFFFFF;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.backdrop-form__area:-ms-input-placeholder {
+  color: #757575;
+  background-color: #FFFFFF;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.backdrop-form__area::-ms-input-placeholder {
+  color: #757575;
+  background-color: #FFFFFF;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.backdrop-form__area::placeholder {
+  color: #757575;
+  background-color: #FFFFFF;
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
 .hero {
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../../images/hero-background.jpg);
-  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../images/hero-background.jpg);
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero-background.jpg);
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-background.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -886,8 +953,8 @@ summary {
           transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.clients-list__clients:hover > .bacground-clients,
-.clients-list__clients:focus > .bacground-clients {
+.clients-list__clients:hover > .clients-list__bacground,
+.clients-list__clients:focus > .clients-list__bacground {
   fill: #2196F3;
 }
 

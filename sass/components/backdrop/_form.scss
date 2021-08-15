@@ -19,28 +19,37 @@
   
 .backdrop-form__description
 {
-    font-size: 12px;
-    line-height: 1.2;
-    letter-spacing: 0.01em;
-    color: $primary-text-color;
-    text-align: left;
-    margin-bottom: 4px;         
+    display: flex;
+     font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: $primary-text-color;
+  text-align: left;
+  margin-bottom: 4px;         
 }
   
 .backdrop-form__input
 {    
     width: 100%;
-    border: 1px solid rgba(33, 33, 33, 0.2);
-    border-radius: 4px;
-    height: 41px;
-    margin-bottom: 10px;
-  
-    font-family: $text-roboto;
-    color: $primary-text-color;
-    font-size: 12px;
-    line-height: 1.2;
-    letter-spacing: 0.01em;
-    padding-left: 42px;
+   border: 1px solid rgba(33, 33, 33, 0.2);
+   border-radius: 4px;
+   height: 41px;
+   margin-bottom: 10px;
+
+   font-family: roboto,sans-serif;
+   color: var(--primary-text-color);
+   font-size: 12px;
+   line-height: 1.2;
+   letter-spacing: 0.01em;
+   padding-left: 42px;
+   &:focus
+   {  
+    outline: none;
+    border-color: $button-color;
+    transition-property: border-color;
+    transition-duration: $time;
+     transition-timing-function: $cubic;
+  }
           
 }
   
@@ -98,6 +107,7 @@
   
 .backdrop-form__checkbox
 {
+    display: flex;
     position: absolute;
     top: 0;
     left: -5%;
@@ -115,19 +125,28 @@
     background-repeat: no-repeat;
 }
   
-.backdrop-form__label
+// .backdrop-form__label
+// {
+//     position: relative;
+//     padding: 0;
+//     margin: 0;
+// }
+
+.backdrop-form__field
 {
-    position: relative;
-    padding: 0;
-    margin: 0;
+  display: block;
+  position: relative;
+  margin-bottom: 4px;
 }
+
   
 .backdrop-form__icon
 {
     position: absolute;
-    top: 25%;
-    left: 15px;  
-    display: inline-block;  
+  top: 50%;
+  left: 10px;
+  transform: translateY(-20%);
+  display: inline-block;  
 }   
   
 .backdrop-form__input:focus,
@@ -135,11 +154,17 @@
 {
     outline: none;
     border-color: $button-color;
+    transition-property: border-color;
+   transition-duration: $time;
+    transition-timing-function: $cubic;
 }
   
 .backdrop-form__input:focus  +.backdrop-form__icon
 {
-    fill: $button-color;     
+    fill: $button-color;  
+    transition-property: fill;
+   transition-duration: $time;
+    transition-timing-function: $cubic;   
 }    
   
 .backdrop-form__contract:focus,
@@ -147,4 +172,14 @@
 .backdrop-form__contract 
 {
     color: $secondary-linc-color;  
+}
+
+.backdrop-form__area::placeholder
+{
+  color: $primary-text-color;
+  background-color:$primary-page-color;
+  font-family: $text-roboto;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
 }

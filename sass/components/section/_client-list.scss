@@ -27,8 +27,8 @@
   transform: translate(0px, 0px);
   transition-duration: $time;
   transition-timing-function: $cubic;
-  &:hover>.bacground-clients,
-  &:focus>.bacground-clients
+  &:hover>.clients-list__bacground,
+  &:focus>.clients-list__bacground
   {
       fill: $secondary-linc-color;
     }
